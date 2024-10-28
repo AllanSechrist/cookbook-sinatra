@@ -2,8 +2,11 @@
 
 <!-- views/index.erb -->
 
-<% @usernames.each do |username| %>
+<% @recipes.each do |recipe| %>
+<ul>
   <li>
-    <%= username %>
+    <%= recipe.name %>
   </li>
+</ul>
 <% end %>
+<a href="/new">Add New Recipe</a>
