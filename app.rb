@@ -15,6 +15,11 @@ get '/new' do
   erb :new
 end
 
+delete '/delete/:id' do
+  cookbook.destroy(params[:id].to_i)
+  redirect "/"
+end
+
 post '/recipes' do
   data = {
     name: params[:name],

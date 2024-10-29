@@ -2,10 +2,14 @@
 
 <!-- views/index.erb -->
 
-<% @recipes.each do |recipe| %>
+<% @recipes.each_with_index do |recipe, index| %>
 <ul>
   <li>
-    <%= recipe.name %>
+    <%= index + 1 %>. <%= recipe.name %>
+    <form action="/delete/<%= index %>" method="post">
+      <input type="hidden" name="_method" value="delete">
+      <button type="submit">Delete</button>
+    </form>
   </li>
 </ul>
 <% end %>
