@@ -1,11 +1,11 @@
-<%= Time.now %>
-
 <!-- views/index.erb -->
 
 <% @recipes.each_with_index do |recipe, index| %>
 <ul>
   <li>
-    <%= index + 1 %>. <%= recipe.name %>
+    <%= index + 1 %>. <%= recipe.name %><br>
+    <%= recipe.description%> | RATING:<%= recipe.rating %>/5 <br>
+    prep time: <%= recipe.prep_time %>
     <form action="/delete/<%= index %>" method="post">
       <input type="hidden" name="_method" value="delete">
       <button type="submit">Delete</button>
